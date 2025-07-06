@@ -3,6 +3,8 @@ import createClient from "@sanity/client";
 
 const token = import.meta.env.CONTACT_TOKEN;
 
+console.log(token)
+
 export const prerender = false;
 
 export async function POST({ request }) {
