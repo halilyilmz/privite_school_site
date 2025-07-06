@@ -3,7 +3,10 @@ import createClient from "@sanity/client";
 
 const token = import.meta.env.CONTACT_TOKEN;
 
-console.log(token)
+console.log(token);
+if (!token) {
+  throw new Error("Sanity write token tanımlı değil! `.env` dosyasını kontrol et.");
+}
 
 export const prerender = false;
 
