@@ -5,6 +5,10 @@ const token = import.meta.env.CONTACT_TOKEN;
 
 export const prerender = false;
 
+if (!token) {
+  throw new Error("Sanity token bulunamadı. .env dosyasına CONTACT_TOKEN eklediğinizden emin olun.");
+}
+
 export async function POST({ request }) {
   const client = createClient({
     projectId: '09qdqo3k',
