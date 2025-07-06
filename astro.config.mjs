@@ -1,12 +1,8 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import netlify from '@astrojs/netlify';
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel'; // SADECE bu
 
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  adapter: netlify(),
   integrations: [react()],
-  adapter: vercel(), // SSR + API için otomatik ayar
 });
