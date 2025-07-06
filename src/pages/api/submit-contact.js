@@ -1,9 +1,13 @@
 // src/pages/api/submit-contact.js
 import createClient from "@sanity/client";
 
-const token = import.meta.env.CONTACT_TOKEN;
+const token = process.env.CONTACT_TOKEN;
 
+console.log("token:")
 console.log(token);
+console.log("kontrol satır")
+
+
 if (!token) {
   throw new Error("Sanity write token tanımlı değil! `.env` dosyasını kontrol et.");
 }
@@ -11,6 +15,9 @@ if (!token) {
 export const prerender = false;
 
 export async function POST({ request }) {
+  console.log("token 2:")
+  console.log(token)
+  console.log("kontrol 2")
   const client = createClient({
     projectId: '09qdqo3k',
     dataset: 'production',
